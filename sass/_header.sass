@@ -1,0 +1,164 @@
+
+
+.header
+  position: relative
+  &_upper
+    display: none
+    position: absolute
+    top: 65px
+    right: 15px
+    background: white
+    z-index: 10
+    +screen_md
+      position: static
+      display: block
+
+.toolbar 
+  padding: 5px 0
+  +screen_md
+    display: flex
+    justify-content: space-between
+    padding: 15px 0
+    align-items: center
+    border-bottom: 1px solid $grey
+
+  button
+    background: transparent
+    border: none
+    color: $black
+    &:focus
+      color: $pink
+    +screen_md
+      &:hover
+        color: $pink
+  &__block
+    display: flex
+
+
+.social-network
+  padding: 0 10px
+  &__item
+    padding: 0 10px
+
+
+.logo
+  &:hover
+    color: $black
+  &::before
+    content: 'CEO'
+    font-size: 30px
+    font-weight: bold
+    color: $pink
+  &::after
+    content: ' target'
+    font-size: 25px
+
+%icon-common
+  color: $pink
+  font-size: 20px
+  vertical-align: -2px
+
+$fab-icons: (telegram: '\f2c6', whatsapp: '\f232', forecast: '\f838')
+$fas-icons: (phone: '\f095', target: '\f140', tags: '\f02c', percent: '\f295', apple: '\f5d1', users: '\f0c0', time: '\f254', tick: '\f058')
+
+@each $icon, $code in $fab-icons
+  .contact__#{$icon}
+    &::before
+      content: $code
+      font-family: $fa-brands
+      @extend %icon-common
+      
+@each $icon, $code in $fas-icons
+  .contact__#{$icon}
+    &::before
+      content: $code
+      font-family: $fa-free
+      font-weight: 600
+      @extend %icon-common
+
+      
+
+
+.contact
+  padding: 5px 0
+  +screen_md
+    padding: 20px 0
+    display: flex
+    justify-content: space-between
+  &__list
+    +screen_md
+      display: flex
+  &__btn
+    margin-left: 10px
+    background-color: $black
+    color: white
+    padding: 4px 15px
+    border: none
+    border-radius: 10px
+    box-shadow: 0 3px 3px 0 #00000054
+    +screen_lg
+      &:hover, &:focus
+        outline: none
+        color: $pink
+        background-color: #fff
+  .logo
+    display: none
+    +screen_md
+      display: initial
+
+        
+.menu
+  display: flex
+  justify-content: space-between
+  align-items: center
+  position: relative
+  +screen_md
+      display: block
+  &__wrap
+    border: 1px solid $grey
+    padding: 5px 0
+    display: block
+    +screen_md
+      padding: 0
+      display: none
+    .logo
+      margin-left: 5px
+      +screen_md
+        display: none
+  &__list
+    display: none
+    position: absolute
+    left: 0
+    right: 0
+    z-index: 10
+    padding: 5px
+    margin-top: 10px
+    background: white
+    +screen_md
+      margin: 0
+      padding: 0
+      position: static
+      display: flex
+      justify-content: space-around
+  &__bars
+    display: none
+    &:checked + .menu__list
+      display: block
+  &__toggle
+    &_bars
+      font-size: 20px
+    &_upper, &_bars
+      padding: 0 5px
+      +screen_md
+        display: none
+  &__link
+    text-transform: uppercase
+    font-size: 14px
+    +screen_md
+      background: transparent
+    +screen_md
+      &:hover
+        color: $green
+
+
+

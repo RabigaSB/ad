@@ -1,0 +1,104 @@
+.slider-fade 
+  animation-name: fade
+  animation-duration: 1.5s
+
+
+@keyframes fade 
+  from 
+    opacity: .4
+  to 
+    opacity: 1
+
+
+.slider
+  background: $black
+  +screen_md
+    overflow: hidden
+  &__col
+    &::before
+      font-size: 30px
+      display: block
+  &__wrap
+    position: relative
+    +screen_md
+      min-height: 500px
+  &__content
+    padding: 40px 0 20px
+    color: white
+    +screen_md
+      position: absolute
+      left: 0
+      top: 0
+      bottom: 0
+      right: 0
+      display: flex
+      align-items: center
+    &__text
+      &_title
+        color: white
+        font-weight: bold
+        font-size: 2rem
+      &_light
+        font-size: 12px
+        font-weight: 300
+        &::before
+          margin-right: 10px
+          font-size: 14px
+    &__item
+      color: white
+      &::before
+        margin-right: 10px
+  &__dot
+    background: transparent
+    border: none
+    color: white
+    +screen_md
+      margin: 0 15px
+    &:focus
+      outline: none 
+    &__wrap
+      position: absolute
+      top: 10px
+.active
+  color: $pink
+
+.form
+  +screen_md
+    padding: 20px
+    width: 400px
+    margin-left: auto
+  &__title
+    font-size: 1.2rem
+    color: $grey
+    text-align: center
+    margin: 30px 0 0
+    text-transform: uppercase
+    +screen_md
+      display: none
+  &__input
+    display: block
+    width: 100%
+    margin: 20px auto
+    padding: 10px
+    border: none 
+    outline: none
+    background: $grey
+    border: 1px solid $grey
+    +screen_md
+      background: white
+      width: 80%
+    &::placeholder
+      color: $black
+      font-size: 12px
+  &__btn
+    margin-bottom: 20px
+    border: none
+    color: white
+    background: $black
+    padding: 8px 15px
+    +screen_md
+      margin-left: 10%
+    &:focus, &:hover
+      background: $pink
+
+
