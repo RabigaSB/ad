@@ -36,6 +36,8 @@
             </div>
         </section>
         
+        
+        
         <section class="menu__wrap">
             <nav class="menu container">
                 <button id="upper-menu-toggler">
@@ -130,15 +132,16 @@
                     
                 </ul>
                 
-                <div class="slider__dot__wrap">
-                    <button id="1" class="slider__dot">Главная</button>
-                    <button id="2" class="slider__dot">Преимущества</button>
-                    <button id="3" class="slider__dot">Пакетные планы</button>
-                </div>
+                
                 
                 
             </div>
             
+        </div>
+        <div class="slider__dot__wrap">
+            <button id="1" class="slider__dot">Главная</button>
+            <button id="2" class="slider__dot">Преимущества</button>
+            <button id="3" class="slider__dot">Пакетные планы</button>
         </div>
     </section>
     
@@ -148,82 +151,83 @@
         <div class="container">
             <div class="toolbar">
                 <a href="#" class="logo"></a>
-                
-                <ul class="toolbar__block social-network">
+                <!--                 
+                    <ul class="toolbar__block social-network">
+                        
+                        <li>
+                            <button class="social-network__item">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+                        </li>
+                        
+                        <li>
+                            <button class="social-network__item">
+                                <i class="fab fa-vk"></i>
+                            </button>
+                        </li>
+                        
+                        <li>
+                            <button class="social-network__item">
+                                <i class="fab fa-instagram"></i>
+                            </button>
+                        </li>
+                        
+                        <li>
+                            <button class="social-network__item">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </li>
+                        
+                        <li>
+                            <button class="social-network__item">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+                        </li>
+                        
+                    </ul> -->
                     
-                    <li>
-                        <button class="social-network__item">
-                            <i class="fab fa-facebook-f"></i>
-                        </button>
-                    </li>
-                    
-                    <li>
-                        <button class="social-network__item">
-                            <i class="fab fa-vk"></i>
-                        </button>
-                    </li>
-                    
-                    <li>
-                        <button class="social-network__item">
-                            <i class="fab fa-instagram"></i>
-                        </button>
-                    </li>
-                    
-                    <li>
-                        <button class="social-network__item">
-                            <i class="fab fa-youtube"></i>
-                        </button>
-                    </li>
-                    
-                    <li>
-                        <button class="social-network__item">
-                            <i class="fab fa-twitter"></i>
-                        </button>
-                    </li>
-                    
-                </ul>
-                
-            </div>
-            <form>
-                <div class="form">
-                    <input id="username" class="form__input" type="text" placeholder="Ваше имя">
-                    <input id="usernumber" class="form__input" type="tel" placeholder="Телефон">
-                    <button id="sendbtn" class="form__btn">Закажите звонок</button>
                 </div>
-            </form>
-        </div>
-    </footer>
-    
-    <script src="js/jquery-3.3.1.js"></script>
-    <script src="js/index.js"></script>
-    <script>
-        $( document ).ready(function() {
-            $('#sendbtn').on('click', function(e) {
-                e.preventDefault();
-                var username = $('#username').val();
-                var usernumber = $('#usernumber').val();
-                if (username && usernumber) {
-                    $.getJSON( "https://api.telegram.org/bot848980496%3AAAHla_yc3NcRB_fmGb56XwExGSE5C2DozyE/sendMessage?chat_id=@AAAAAFH1y3z3z6sTzzmkZA&text=" + username + ": " + usernumber, function( data ) {
-                        alert('Мы Вам перезвоним в течении 10 минут');
-                        $('#username').val('');
-                        $('#usernumber').val('');
-                    });
-                }
-                
-                
+                <form>
+                    <div class="form">
+                        <input id="username" class="form__input" type="text" placeholder="Как к Вам обращаться?">
+                        <input id="usernumber" class="form__input" type="tel" placeholder="Телефон">
+                        <button id="sendbtn" class="form__btn">Закажите звонок</button>
+                    </div>
+                </form>
+            </div>
+        </footer>
+        
+        <script src="js/jquery-3.3.1.js"></script>
+        <script src="js/index.js"></script>
+        <script>
+            $( document ).ready(function() {
+                $('#sendbtn').on('click', function(e) {
+                    e.preventDefault();
+                    var username = $('#username').val();
+                    var usernumber = $('#usernumber').val();
+                    if (username && usernumber) {
+                        $.getJSON( "https://api.telegram.org/bot848980496%3AAAHla_yc3NcRB_fmGb56XwExGSE5C2DozyE/sendMessage?chat_id=@AAAAAFH1y3z3z6sTzzmkZA&text=" + username + ": " + usernumber, function( data ) {
+                            alert('Мы Вам перезвоним в течении 10 минут');
+                            $('#username').val('');
+                            $('#usernumber').val('');
+                        });
+                    }
+                    
+                    
+                    
+                });
                 
             });
-            
-        });
-    </script>
-</body>
-</html>
-
-<!-- -1001375062908 -->
-
-
-
-
-
-
-
+        </script>
+    </body>
+    </html>
+    
+    <!-- -1001375062908 -->
+    
+    
+    
+    
+    
+    
+    
+    
