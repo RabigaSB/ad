@@ -3,15 +3,7 @@
 .header
   position: relative
   &_upper
-    // display: none
-    // position: absolute
-    // top: 65px
-    // right: 15px
     background: white
-    // z-index: 10
-    // +screen_md
-      // position: static
-      // display: block
 
 .toolbar 
   padding: 5px 0
@@ -93,7 +85,7 @@ $fas-icons: (phone: '\f095', target: '\f140', tags: '\f02c', percent: '\f295', a
     margin-left: 10px
     background-color: $black
     color: white
-    padding: 4px 15px
+    padding: 10px 15px
     border: none
     border-radius: 10px
     box-shadow: 0 3px 3px 0 #00000054
@@ -102,7 +94,6 @@ $fas-icons: (phone: '\f095', target: '\f140', tags: '\f02c', percent: '\f295', a
     +screen_lg
       margin-bottom: 0
       &:hover, &:focus
-        outline: none
         color: $pink
         background-color: #fff
   &__phone
@@ -121,7 +112,15 @@ $fas-icons: (phone: '\f095', target: '\f140', tags: '\f02c', percent: '\f295', a
     &::before
       color: white
       font-size: 26px
-      line-height: 1.95
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      display: flex
+      align-items: center
+      justify-content: center
+      margin: 0
     +screen_md
       position: static
       overflow: initial
@@ -134,7 +133,9 @@ $fas-icons: (phone: '\f095', target: '\f140', tags: '\f02c', percent: '\f295', a
       &::before
         color: $pink
         font-size: 20px
-        line-height: unset
+        position: static
+        display: unset
+        margin-right: 10px
 
         
 .menu

@@ -26,7 +26,7 @@
     +screen_md
       min-height: 500px
   &__content
-    padding: 20px 0
+    padding: 50px 0
     color: white
     &__text
       &_title
@@ -46,10 +46,14 @@
     border: none
     color: $black
     padding: 15px 10px
-    width: 20%
+    width: 30%
     position: relative
     text-align: center
     bottom: -6px
+    +screen_md
+      width: 25%
+    +screen_lg
+      width: 20%
     &:focus, &:hover
       outline: none 
       color: $pink
