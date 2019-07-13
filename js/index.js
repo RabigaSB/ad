@@ -1,28 +1,3 @@
-// manage header features
-var upper_header = $('#upper-header');
-var upper_menu_toggler = $('#upper-menu-toggler');
-var open = false
-
-upper_menu_toggler.on('click', function(e) {
-  e.preventDefault();
-  console.log('clicked');
-  if (open){
-    upper_header.addClass('d-none');
-    upper_header.removeClass('d-block');
-    open = false;
-    console.log('open', open);
-    
-  }
-  else {
-    upper_header.addClass('d-block');
-    upper_header.removeClass('d-none');
-    open = true;
-    console.log('open', open);
-
-  }
-  
-})
-
 // manage slider
 var slider_items = $('.slider__item');
 var slider_dots = $('.slider__dot');
