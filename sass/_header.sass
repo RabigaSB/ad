@@ -80,13 +80,17 @@ $fas-icons: (phone: '\f095', target: '\f140', tags: '\f02c', percent: '\f295', a
 
 .contact
   padding: 5px 0
-  display: flex
-  justify-content: space-between
+  +screen_sm
+    display: flex
+    justify-content: space-between
   +screen_md
     padding: 20px 0
   &__list
+    text-align: right
+    margin-top: 20px
     +screen_lg
       display: flex
+      margin-top: 0
   &__btn
     margin-left: 10px
     background-color: $black
