@@ -1,7 +1,10 @@
-.slider-fade 
+.fade-in 
   animation-name: fade
   animation-duration: 1.5s
 
+.fade-out 
+  animation-name: fade
+  animation-duration: 1.5s
 
 @keyframes fade 
   from 
@@ -18,6 +21,7 @@
     overflow: hidden
   &__heading
     text-align: right
+    font-weight: bold
   &__card
     margin: 30px
     padding: 30px
@@ -83,24 +87,24 @@
     padding: 10px
     border: none 
     outline: none
-    background: $grey
+    background: white
     border: 1px solid $grey
     +screen_md
-      background: white
       width: 80%
     &::placeholder
       color: $black
       font-size: 12px
   &__btn
     margin-bottom: 20px
-    border: none
+    border: 5px solid $pink
     color: white
-    background: $black
+    background: $pink
     padding: 8px 15px
     +screen_md
       margin-left: 10%
     &:focus, &:hover
-      background: $pink
+      background: white
+      color: $pink
 
 
 .first
@@ -109,18 +113,22 @@
   align-items: center
   justify-content: center
 
-.second
+.second, .fourth
   background: white
   padding: 40px 0
   +screen_md
     padding: 80px 0
-  .slider__content__text_title
+  .slider__content__text_title, h3, h4, p
     color: $black
 
 .third
-  padding-bottom: 40px
+  padding-bottom: 20%
   .slider__content__text_title
     margin-bottom: 40px
+    margin-top: 50px
+  .col-md-6
+    padding-top: 10px
+    padding-bottom: 10px
 
 .main
   font-size: 3rem
@@ -147,3 +155,60 @@ h3, h4
     width: 100%
     background: white
   
+
+%step
+  font-size: 3rem
+  display: flex
+  background: #d53e5c
+  width: 100px
+  height: 100px
+  align-items: center
+  justify-content: center
+  border-radius: 50%
+  color: white
+  margin-right: 30px
+  flex: 0 0 100px
+
+@each $step in 1, 2, 3
+  .step#{$step}
+    h3, h4
+      font-weight: bold
+      margin-top: 0
+      margin-bottom: 6px
+    p
+      margin-bottom: 3px
+      font-size: 12px
+      margin-top: 0
+    &::before
+      content: '#{$step}'
+      @extend %step
+
+.fourth
+  &__col
+    display: flex
+    align-items: center
+    margin-bottom: 20px
+
+.modal
+  position: fixed
+  z-index: 2000
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  background: transparentize($black, 0.3)
+  transition: all 0.4s ease-in
+  &__content
+    padding: 20px
+    margin: 0 10px
+    background: white
+    text-align: right
+    box-shadow: 0 0 20px 0 transparentize($black, 0.3)
+    &__text
+      font-size: 1.5rem
+    &__number
+      text-align: center
+      color: $pink
