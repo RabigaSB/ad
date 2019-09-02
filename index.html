@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146596949-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-146596949-1');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -17,7 +26,7 @@
                 <a href="#" class="logo"></a>
                 <ul class="contact__list">
                     <li>
-                        <a class="contact__btn contact__telegram" href="https://t.me/rabigasb">Пишите в Telegram</a>
+                        <a class="contact__btn contact__telegram" href="https://t.me/adstarget">Пишите в Telegram</a>
                     </li>
                     <li>
                         <a class="contact__btn contact__phone" href="tel:87014806780">+7 (701) 480 67 80</a>
@@ -83,27 +92,41 @@
                                 <ul class="row">
                                     <li class="col-md-6">
                                         <div class="slider__card">
-                                            <h4 class="slider__heading">Единоразовая настройка от <br/><span class="price">40 000 тг</span></h4>
-                                            <ul>
-                                                <li class="slider__content__text_light contact__tick">До 50 ключевых слов</li>
-                                                <li class="slider__content__text_light contact__tick">Полный доступ к рекламному кабинету</li>
-                                                <li class="slider__content__text_light contact__tick">Гарантия целевого трафика</li>
-                                                <li class="slider__content__text_light contact__tick">Объявления нового формата с максимальной подсветкой</li>
-                                            </ul>
+                                            <div>
+                                                <h4 class="slider__heading">Единоразовая настройка от <br/><span class="price">40 000 тг</span></h4>
+                                                <ul>
+                                                    <li class="slider__content__text_light contact__tick">До 50 ключевых слов</li>
+                                                    <li class="slider__content__text_light contact__tick">Полный доступ к рекламному кабинету</li>
+                                                    <li class="slider__content__text_light contact__tick">Гарантия целевого трафика</li>
+                                                    <li class="slider__content__text_light contact__tick">Объявления нового формата с максимальной подсветкой</li>
+                                                </ul>
+                                            </div>
+<!--                                            <div class="slider__card__btn__wrap">-->
+<!--                                                <button class="form__btn">Заказать</button>-->
+<!--                                            </div>-->
                                         </div>
                                     </li>
                                     <li class="col-md-6">
                                         <div class="slider__card">
-                                            <h4 class="slider__heading">Единоразовая настройка от <br/><span class="price">60 000 тг</span></h4>
-                                            <ul>
-                                                <li class="slider__content__text_light contact__tick">До 100 ключевых слов</li>
-                                                <li class="slider__content__text_light contact__tick">Полный доступ к рекламному кабинету</li>
-                                                <li class="slider__content__text_light contact__tick">Гарантия целевого трафика</li>
-                                                <li class="slider__content__text_light contact__tick">Объявления нового формата с максимальной подсветкой</li>
-                                                <li class="slider__content__text_light contact__tick">Настройка систем аналитики на сайт</li>
-                                                <li class="slider__content__text_light contact__tick">Настройка автоматизированных правил и стратегий</li>
-                                                <li class="slider__content__text_light contact__tick">Настройка рекламы в сетях в ПОДАРОК</li>
-                                            </ul>
+                                            <div>
+                                                <h4 class="slider__heading">Единоразовая настройка от <br/><span class="price">60 000 тг</span></h4>
+                                                <ul>
+                                                    <li class="slider__content__text_light contact__tick">До 100 ключевых слов</li>
+                                                    <li class="slider__content__text_light contact__tick">Полный доступ к рекламному кабинету</li>
+                                                    <li class="slider__content__text_light contact__tick">Гарантия целевого трафика</li>
+                                                    <li class="slider__content__text_light contact__tick">Объявления нового формата с максимальной подсветкой</li>
+                                                    <li class="slider__content__text_light contact__tick">Настройка систем аналитики на сайт</li>
+                                                    <li class="slider__content__text_light contact__tick">Настройка автоматизированных правил и стратегий</li>
+                                                    <li class="slider__content__text_light contact__tick">Настройка рекламы в сетях в ПОДАРОК</li>
+                                                </ul>
+                                            </div>
+<!--                                            <div class="slider__card__btn__wrap">-->
+<!--                                                <button-->
+<!--                                                        class="form__btn"-->
+<!--                                                >-->
+<!--                                                    Заказать-->
+<!--                                                </button>-->
+<!--                                            </div>-->
                                         </div>
                                     </li>
                                 </ul>
@@ -153,7 +176,7 @@
     
     
     
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container">
             <div class="toolbar">
                 <a href="#" class="logo"></a>

@@ -12,8 +12,18 @@
     background: white
     color: $black
     height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
     +screen_lg
       margin: 30px
+    &__btn
+      &__wrap
+        text-align: right
+        .form__btn
+          padding: 5px 40px
+          font-size: x-large
+          font-weight: bold
   &__col
     &::before
       font-size: 3rem
