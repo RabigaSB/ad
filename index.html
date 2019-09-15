@@ -29,7 +29,7 @@
                         <a
                                 class="contact__btn contact__telegram"
                                 href="https://t.me/adstarget"
-                                onClick="gtag('event', 'click', {'event_category' : 'telegram'})"
+                                onclick="gtag('event', 'click', {'event_category' : 'telegram'})"
                         >
                             Пишите в Telegram
                         </a>
@@ -38,7 +38,7 @@
                         <a
                                 class="contact__btn contact__phone"
                                 href="tel:87014806780"
-                                onClick="gtag('event', 'click', {'event_category' : 'zvonok'})"
+                                onclick="gtag('event', 'click', {'event_category' : 'zvonok'})"
                         >
                             +7 (701) 480 67 80
                         </a>
@@ -47,7 +47,7 @@
                         <a
                                 class="contact__btn contact__whatsapp"
                                 href="https://api.whatsapp.com/send?phone=77014806780&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5,%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C%20%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%BD%D1%83%D1%8E%20%D0%BA%D0%B0%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8E"
-                                onClick="gtag('event', 'click', {'event_category' : 'whatsapp'})"
+                                onclick="gtag('event', 'click', {'event_category' : 'whatsapp'})"
                         >
                             Пишите в WhatsApp
                         </a>
@@ -119,9 +119,9 @@
                                                     <li class="slider__content__text_light contact__tick">Объявления нового формата с максимальной подсветкой</li>
                                                 </ul>
                                             </div>
-<!--                                            <div class="slider__card__btn__wrap">-->
-<!--                                                <button class="form__btn">Заказать</button>-->
-<!--                                            </div>-->
+                                            <div class="slider__card__btn__wrap">
+                                                <button class="form__btn" id="package40">Заказать</button>
+                                            </div>
                                         </div>
                                     </li>
                                     <li class="col-md-6">
@@ -138,13 +138,9 @@
                                                     <li class="slider__content__text_light contact__tick">Настройка рекламы в сетях в ПОДАРОК</li>
                                                 </ul>
                                             </div>
-<!--                                            <div class="slider__card__btn__wrap">-->
-<!--                                                <button-->
-<!--                                                        class="form__btn"-->
-<!--                                                >-->
-<!--                                                    Заказать-->
-<!--                                                </button>-->
-<!--                                            </div>-->
+                                            <div class="slider__card__btn__wrap">
+                                                <button class="form__btn" id="package60">Заказать</button>
+                                            </div>
                                         </div>
                                     </li>
                                 </ul>
@@ -171,7 +167,7 @@
                                         <h3 class="step__title2">Настройка</h3>
                                         <p>Настройка рекламной кампании</p>
                                         <p>Установка систем аналитики на сайт</p>
-                                        <p>Утверждение рекламной кампании и запуск</p>
+                                        <p>Утверждение рекламной кампании</p>
                                     </div>
                                 </li>
                                 <li class="fourth__col step3">
@@ -219,9 +215,32 @@
             </div>
         </div>
     </div>
+
+    <div id='modal-40' style="display: none">
+        <div class="modal">
+            <div id="modal-content-40" class="modal__content">
+                <div class="form">
+                    <input id="username-40" class="form__input" type="text" placeholder="Как к Вам обращаться?">
+                    <input id="usernumber-40" class="form__input" type="tel" placeholder="Телефон">
+                    <button id="sendbtn-40" class="form__btn">Заказать звонок</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id='modal-60' style="display: none">
+        <div class="modal">
+            <div id="modal-content-60" class="modal__content">
+                <div class="form">
+                    <input id="username-60" class="form__input" type="text" placeholder="Как к Вам обращаться?">
+                    <input id="usernumber-60" class="form__input" type="tel" placeholder="Телефон">
+                    <button id="sendbtn-60" class="form__btn">Заказать звонок</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <script src="js/jquery-3.3.1.js"></script>
-    <script src="js/index.js"></script>
     <script>
         $( document ).ready(function() {
             $('#sendbtn').on('click', function(e) {
@@ -245,6 +264,69 @@
                 $('#modal').fadeOut(350);
             });
             $('#modal-content').on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            });
+            //package40
+            $('#package40').on('click', function(e) {
+                e.stopPropagation();
+                $('#modal-40').fadeIn(350);
+                gtag('event', 'click', {'event_category' : 'sorokmodalka'});
+            });
+            $('#modal-40').on('click', function(e) {
+                e.stopPropagation();
+                $('#modal-40').fadeOut(350);
+            });
+            $('#sendbtn-40').on('click', function() {
+                var username40 = $('#username-40').val();
+                var usernumber40 = $('#usernumber-40').val();
+                if (usernumber40) {
+                    $.getJSON( "https://api.telegram.org/bot848980496%3AAAHla_yc3NcRB_fmGb56XwExGSE5C2DozyE/sendMessage?chat_id=@AAAAAFH1y3z3z6sTzzmkZA&text=Пакет: 40 %0A" +
+                        'Как обращаться к клиенту: ' + username40 + "%0A " +
+                        'Номер телефона: ' + usernumber40,
+                        function( data ) {
+                        $('#modal').fadeIn(350);
+                        $('#number').text(usernumber40);
+                        $('#username-40').val('');
+                        $('#usernumber-40').val('');
+                        });
+                    $('#modal-40').fadeOut(350);
+                    gtag('event', 'click', {'event_category' : 'sorok'});
+                }
+            });
+            $('#modal-content-40').on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            });
+
+            //package60
+            $('#package60').on('click', function(e) {
+                e.stopPropagation();
+                $('#modal-60').fadeIn(350);
+                gtag('event', 'click', {'event_category' : 'shesdesyatmodalka'});
+            });
+            $('#modal-60').on('click', function(e) {
+                e.stopPropagation();
+                $('#modal-60').fadeOut(350);
+            });
+            $('#sendbtn-60').on('click', function() {
+                var username60 = $('#username-60').val();
+                var usernumber60 = $('#usernumber-60').val();
+                if (usernumber60) {
+                    $.getJSON( "https://api.telegram.org/bot848980496%3AAAHla_yc3NcRB_fmGb56XwExGSE5C2DozyE/sendMessage?chat_id=@AAAAAFH1y3z3z6sTzzmkZA&text=Пакет: 60 %0A" +
+                        'Как обращаться к клиенту: ' + username60 + "%0A " +
+                        'Номер телефона: ' + usernumber60,
+                        function( data ) {
+                            $('#modal').fadeIn(350);
+                            $('#number').text(usernumber60);
+                            $('#username-60').val('');
+                            $('#usernumber-60').val('');
+                        });
+                    $('#modal-60').fadeOut(350);
+                    gtag('event', 'click', {'event_category' : 'shesdesyat'});
+                }
+            });
+            $('#modal-content-60').on('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
             });
